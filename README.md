@@ -26,4 +26,8 @@
 + Make your changes and add commit messages
 + Push your changes to a separate branch with the name as: ```<your_username>```
 + Submit a PR
+
+# Tech Stack
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="30">    <img src="https://cdn.worldvectorlogo.com/logos/tailwindcss.svg" width="30">     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="30">
+
   
