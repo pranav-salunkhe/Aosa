@@ -6,7 +6,7 @@ const details = [{
 },
 {
     id: 2,
-    name:"Kushangi Salunkhe",
+    name:"John Doe",
     work:"Data Scientist",
     followCount:"5K"
 },
