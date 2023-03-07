@@ -1,7 +1,24 @@
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, StatusBar } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import GroupCard from '../components/cards/GroupCard';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { details } from '../components/test_data/test_prof.js';
+
+function createRedBoard(details){
+  return(
+    <View>
+    <GroupCard
+      key = {details.id}
+      name = {details.name}
+      work = {details.work}
+      followCount = {details.followCount}
+    >
+    </GroupCard>
+    </View>
+  )
+}
+
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -11,54 +28,27 @@ const HomeScreen = () => {
         });
     }, []);
   return (
-    <View>
-        <View className="bg-slate-900 w-full h-24">
-          <View className="inset-y-16 pl-3 pr-3 flex-row justify-between">
-          <TouchableOpacity>
-            <Image
-              className=""
-              source={require("../assets/menu.png")}
-            />
-          </TouchableOpacity>
-          <Text className="text-white">AOSA</Text>
-          <TouchableOpacity>
-            <Image
-              className=""
-              source={require("../assets/more.png")}
-            />
-          </TouchableOpacity>
-          </View>
-        </View>
-        <ScrollView className="bg-slate-800 w-full h-full">
-            {/* Card of Money Splitting Group */}
-            <View className="flex flex-col pt-2 px-2 space-y-2">
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            <View>
-            <GroupCard />
-            </View>
-            </View>
-        </ScrollView>
+    <SafeAreaView>
+    <StatusBar 
+      backgroundColor="#dc2626"
+      barStyle={'dark-content'}
+      />
+    <View className="bg-stone-900 h-12 flex-row justify-between items-center">
+    <TouchableOpacity>
+      <Image source={require('../assets/menu-bar.png')}/>
+    </TouchableOpacity>
+    <TouchableOpacity>
+    <Text className="text-red-600 text-lg font-mono font-extrabold subpixel-antialiased">AOSA</Text>
+    </TouchableOpacity>
+    <TouchableOpacity>
+    <Image source={require('../assets/new-moon.png')}/>
+    </TouchableOpacity>
     </View>
+    <View className="w-full h-0.5 bg-red-600"></View>
+    <ScrollView className="h-full pt-4 flex flex-col space-y-4 px-2.5 bg-stone-900">
+     {details.map(createRedBoard)}
+    </ScrollView>
+    </SafeAreaView>
   );
 }
 
