@@ -18,7 +18,7 @@ const details = [{
 },
 {
     id: 4,
-    name:"Filip Hracke",
+    name:"Filip Hráček",
     work:"Game Developer",
     followCount:"401"
 },
