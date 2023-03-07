@@ -1,5 +1,5 @@
 # Aosa
-A social media platform for being productive and learning on the go.
+> A social media platform for being productive and learning on the go.
 
 # Snapshot of the App
 
